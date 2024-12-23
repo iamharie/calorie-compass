@@ -7,9 +7,9 @@ const UserInput: React.FC = () => {
   const [age, setAge] = useState<number | "">("");
   const [gender, setGender] = useState<string>("");
   const [height, setHeight] = useState<string>("");
-  const [collectHeight, setCollectHeight] = useState<number | "">("");
+  const [collectHeight, setCollectHeight] = useState<string>("");
   const [weight, setWeight] = useState<string>("");
-  const [collectWeight, setCollectWeight] = useState<number | "">("");
+  const [collectWeight, setCollectWeight] = useState<string>("");
   const [calories, setCalories] = useState<number | null>(null);
 
   //Logic to calculate calorie intake
@@ -121,7 +121,7 @@ const UserInput: React.FC = () => {
             type="float"
             value={collectHeight}
             placeholder={`Enter height in ${height}`}
-            onChange={(e) => setCollectHeight(Number(e.target.value))}
+            onChange={(e) => setCollectHeight(e.target.value)}
             required
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2"
           />
@@ -146,7 +146,7 @@ const UserInput: React.FC = () => {
             type="float"
             value={collectWeight}
             placeholder={`Enter weight in ${weight}`}
-            onChange={(e) => setCollectWeight(Number(e.target.value))}
+            onChange={(e) => setCollectWeight(e.target.value)}
             required
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2"
           />
