@@ -22,8 +22,7 @@ const UserInput: React.FC = () => {
 
     let calorieIntake =
       gender === "male" ? bodyWeight * 28.5 : bodyWeight * 24.5;
-    setCalories(calorieIntake);
-
+    calorieIntake = parseFloat(calorieIntake.toFixed(0));
     setCalories(calorieIntake);
 
     //Logger
