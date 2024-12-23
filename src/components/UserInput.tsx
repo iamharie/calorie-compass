@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Calories from "./Calories";
 import Macros from "./Macros";
 
@@ -15,9 +15,9 @@ const UserInput: React.FC = () => {
   //Logic to calculate calorie intake
   const calculateCalories = (e: React.FormEvent) => {
     e.preventDefault();
-    let bodyWeight = collectWeight;
+    let bodyWeight = Number(collectWeight);
     if (weight === "lbs") {
-      bodyWeight = bodyWeight / 2.205;
+      bodyWeight = Number(bodyWeight) / 2.205;
     }
 
     let calorieIntake =
