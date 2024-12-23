@@ -6,11 +6,31 @@ const UserInput: React.FC = () => {
   const [gender, setGender] = useState<string>("");
   const [height, setHeight] = useState<string>("");
   const [collectHeight, setCollectHeight] = useState<string>("");
-  const [weight, setWeight] = useState("");
+  const [weight, setWeight] = useState<string>("");
   const [collectWeight, setCollectWeight] = useState<string>("");
+  const [calories, setCalories] = useState<number | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  //Logic to calculate calorie intake
+  const calculateCalories = (e: React.FormEvent) => {
     e.preventDefault();
+    let bodyWeight = Number(collectWeight);
+    if (weight === "lbs") {
+      bodyWeight = bodyWeight / 2.205;
+    } else {
+      bodyWeight = bodyWeight;
+    }
+
+    let calorieIntake;
+    if (gender === "male") {
+      calorieIntake = bodyWeight * 28.5;
+    } else {
+      calorieIntake = bodyWeight * 24.5;
+    }
+
+    setCalories(calorieIntake);
+
+    //Logger
+
     const userData = {
       name,
       age: Number(age),
@@ -19,12 +39,13 @@ const UserInput: React.FC = () => {
       collectHeight: Number(collectHeight),
       weight,
       collectWeight: Number(collectWeight),
+      calories: calorieIntake,
     };
     console.log(userData);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={calculateCalories}>
       <div>
         <label>Name:</label>
         <input
@@ -53,7 +74,6 @@ const UserInput: React.FC = () => {
           <option value="">Select</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
-          <option value="other">Other</option>
         </select>
       </div>
 
@@ -98,6 +118,9 @@ const UserInput: React.FC = () => {
       </div>
 
       <button type="submit">Submit</button>
+      {calories && (
+        <div>Estimated Maintenance Calorie Intake: {calories}/ day</div>
+      )}
     </form>
   );
 };
