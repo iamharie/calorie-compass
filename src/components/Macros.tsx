@@ -2,26 +2,26 @@ import { GiChickenOven, GiBowlOfRice } from "react-icons/gi";
 import { BiCheese } from "react-icons/bi";
 
 interface MacrosProps {
-  calories: number;
+  // calories: number;
   bodyWeight: number;
 }
 
-const Macros: React.FC<MacrosProps> = ({ calories, bodyWeight }) => {
+const Macros: React.FC<MacrosProps> = ({ bodyWeight }) => {
   //Calculate marcos breakdown
-  const proteinPerKg = 2;
-  const fatPerKg = 0.5;
-  const carbPerKg = 4;
+  // const proteinPerKg = 2;
+  // const fatPerKg = 0.5;
+  // const carbPerKg = 4;
 
   console.log(bodyWeight);
   // Calculate grams based on body weight
-  const proteinGrams = bodyWeight * proteinPerKg;
-  const fatGrams = bodyWeight * fatPerKg;
-  const carbGrams = bodyWeight * carbPerKg;
+  // const proteinGrams = bodyWeight * proteinPerKg;
+  // const fatGrams = bodyWeight * fatPerKg;
+  // const carbGrams = bodyWeight * carbPerKg;
 
   // Convert grams to calories
-  const proteinCalories = proteinGrams * 4;
-  const fatCalories = fatGrams * 9;
-  const carbCalories = carbGrams * 4;
+  // const proteinCalories = proteinGrams * 4;
+  // const fatCalories = fatGrams * 9;
+  // const carbCalories = carbGrams * 4;
 
   // Validate total calorie alignment
   // const totalCalculatedCalories = proteinCalories + fatCalories + carbCalories;

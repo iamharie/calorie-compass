@@ -180,7 +180,7 @@ const UserInput: React.FC = () => {
         <div className="mt-4">
           <Calories calories={calories} name={submittedName} />
           <Macros
-            calories={calories}
+            // calories={calories}
             bodyWeight={convertToKgs(Number(collectWeight), weight)}
           />
         </div>
