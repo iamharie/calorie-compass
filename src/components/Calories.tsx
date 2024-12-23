@@ -6,8 +6,11 @@ interface UserInputProps {
 
 const Calories: React.FC<UserInputProps> = ({ calories }) => {
   return (
-    <div>
-      <h2>{calories}</h2>
+    <div className="flex flex-col justify-center items-center h-full">
+      <p className="text-lg text-gray-600">Estimated maintenance calories</p>
+      <h2 className="text-2xl font-bold text-gray-800">
+        {calories ? `${calories} / day` : "N/A"}
+      </h2>
     </div>
   );
 };

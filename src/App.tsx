@@ -1,9 +1,10 @@
 import UserInput from "./components/UserInput";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-      <h1>Calorie Compass</h1>
+      <Header />
       <UserInput />
     </>
   );
