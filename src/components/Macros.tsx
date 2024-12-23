@@ -24,7 +24,7 @@ const Macros: React.FC<MacrosProps> = ({ calories, bodyWeight }) => {
   const carbCalories = carbGrams * 4;
 
   // Validate total calorie alignment
-  const totalCalculatedCalories = proteinCalories + fatCalories + carbCalories;
+  // const totalCalculatedCalories = proteinCalories + fatCalories + carbCalories;
   return (
     <div className="p-4 bg-gray-100 rounded-lg shadow-md md:p-6 lg:p-8 text-center mt-5">
       <h3 className="text-xl font-semibold mb-2 md:text-2xl lg:text-3xl">
