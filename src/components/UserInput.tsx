@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Calories from "./Calories";
+import Macros from "./Macros";
 
 const UserInput: React.FC = () => {
   const [name, setName] = useState<string>("");
@@ -119,7 +121,10 @@ const UserInput: React.FC = () => {
 
       <button type="submit">Submit</button>
       {calories && (
-        <div>Estimated Maintenance Calorie Intake: {calories}/ day</div>
+        <>
+          <Calories calories={calories} />
+          <Macros />
+        </>
       )}
     </form>
   );
